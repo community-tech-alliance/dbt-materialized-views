@@ -1,4 +1,4 @@
-{% materialization materialized_view, adapter='bigquery' -%}
+{% materialization cta_materialized_view, adapter='bigquery' -%}
 
   {% set full_refresh_mode = (should_full_refresh()) %}
 

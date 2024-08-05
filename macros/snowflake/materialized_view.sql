@@ -1,4 +1,4 @@
-{% materialization materialized_view, adapter='snowflake' -%}
+{% materialization cta_materialized_view, adapter='snowflake' -%}
 
   {% set original_query_tag = set_query_tag() %}
 

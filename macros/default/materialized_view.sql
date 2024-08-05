@@ -1,4 +1,4 @@
-{% materialization materialized_view, default -%}
+{% materialization cta_materialized_view, default -%}
 
   {% set full_refresh_mode = (should_full_refresh()) %}
 

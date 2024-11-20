@@ -10,6 +10,18 @@ Materialized views vary significantly across databases, as do their current limi
 
 If you're here, you may also like the [dbt-materialize](https://github.com/MaterializeInc/materialize/tree/main/misc/dbt-materialize) plugin, which enables dbt to materialize models as materialized views in [Materialize](https://materialize.io/).
 
+### ATTENTION: This repo is set up for secrets scanning using pre-commit and TruffleHog. pre-commit (as the name implies) will run before git commit commands. For the purposes of secrets detection, we want to catch them before they're committed and pushed to GitHub, as opposed to having a GitHub Action that catches them after they've already been exposed. TruffleHog is an open-source secrets detection tool that we can leverage for local scanning for this exact purpose. Follow the instructions below after cloning the repo to your local machine. 
+
+```
+brew install pre-commit trufflehog  # This only needs to be done once on your machine
+pre-commit install                  # Note that this needs to be run for each repo that has a pre-commit config
+pre-commit run                      # Run once to make sure the pre-commit works
+```
+
+All done! Be on the lookout for any secrets that were detected during the pre-commit step from your local machine.
+
+Note: if you're using GitHub Desktop, this should still work but you'll need to configure GitHub Desktop to use your default shell application (such as Terminal, iTerm 2, etc.). You can do that by going to `GitHub Desktop -> Settings -> Integrations -> Shell` then restart GitHub Desktop afterwards.
+
 ## Setup
 
 ### General installation:
